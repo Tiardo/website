@@ -1,0 +1,75 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Регистрация</title>
+</head>
+
+<body>
+<div>
+    <form method="POST" th:action="@{/registration}" th:object="${userForm}">
+        <h2>Регистрация</h2>
+        <div>
+            <input type="text" th:field="*{username}" placeholder="Username" autofocus="true"/>
+            <div th:if="${usernameError}" th:text="${usernameError}" style="color:red;"></div>
+        </div>
+        <div>
+            <input type="password" th:field="*{password}" placeholder="Password"/>
+        </div>
+        <div>
+            <input type="password" th:field="*{passwordConfirm}" placeholder="Confirm your password"/>
+            <div th:if="${passwordError}" th:text="${passwordError}" style="color:red;"></div>
+        </div>
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+    <a href="/" th:href="@{/}">Главная</a>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <title>Регистрация</title>-->
+<!--</head>-->
+
+<!--<body>-->
+<!--<div>-->
+<!--    <form method="POST" modelAttribute="userForm">-->
+<!--        <h2>Регистрация</h2>-->
+<!--        <div>-->
+<!--            <input type="text" path="username" placeholder="Username"-->
+<!--                        autofocus="true"></input>-->
+<!--            <errors path="username"></errors>-->
+<!--            <h1 th:text="${usernameError}"/>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <input type="password" path="password" placeholder="Password"></input>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <input type="password" path="passwordConfirm"-->
+<!--                        placeholder="Confirm your password"></input>-->
+<!--            <errors path="password"></errors>-->
+<!--            <h1 th:text="${passwordError}"/>-->
+<!--        </div>-->
+<!--        <button type="submit">Зарегистрироваться</button>-->
+<!--    </form>-->
+<!--    <a href="/">Главная</a>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
