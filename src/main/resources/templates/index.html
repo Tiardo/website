@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<div>
+<div >
 
 
 
@@ -18,22 +18,24 @@
         <h4><a href="/registration">Регистрация</a></h4>
     </div>
 
-    <div sec:authorize ="isAuthenticated()">
+    <div sec:authorize ="isAuthenticated()" >
         <h4><span sec:authentication="name">Bob</span></h4>
         <h4><a href="/logout">Выйти</a></h4>
 
-
-
-        <td th:each="user : ${user}">
-            <a th:if="${username == user.username}" th:href="@{/profile/{id}(id=${user.id}}">Profile</a>
-        </td>
-
+        <h4><a href="/LKabinet" >Личный кабинет</a></h4>
 
     </div>
 
 
 
-
 </div>
+
+
+<!--<div th:each="index : ${user}" class="...">-->
+<!--    <a href="LKabinet.html" th:href="@{'/LKabinet/'+${user.username}}">reterter</a>-->
+
+<!--</div>-->
+
+
 </body>
 </html>

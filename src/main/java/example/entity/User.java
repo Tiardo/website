@@ -34,6 +34,7 @@ public class User implements UserDetails {
     @JdbcTypeCode(Types.BINARY)
     @Column(name = "profileImage", columnDefinition = "bytea")
     private byte[] profileImage;
+    //загрузка изображения
     public String setProfileImage(byte[] profileImage) {
         this.profileImage = profileImage;
         if (profileImage != null) {
@@ -41,12 +42,10 @@ public class User implements UserDetails {
         } else {
             return null;
         }}
-    public String getProfileImage(byte[] profileImage) {
-        if (profileImage != null) {
-            return Base64.getEncoder().encodeToString(profileImage);
-        } else {
-            return null;
-        }}
+    //Отправка изображения
+    public String generateBase64Image() {
+        return Base64.getEncoder().encodeToString(profileImage);
+    }
 
 
     @Transient

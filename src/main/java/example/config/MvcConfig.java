@@ -23,9 +23,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
             registry.addViewController("/admin").setViewName("admin");
             registry.addViewController("/index").setViewName("index");
 
-
         }
-
     }
 
 
