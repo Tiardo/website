@@ -1,0 +1,64 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Личный кабинет</title>
+</head>
+<body>
+
+<h1>Профиль пользователя</h1>
+
+
+
+
+<ul th:object="${user}">
+  <h2>Привет <span th:text="*{username}"></span></h2>
+  <h2><li>Имя: <span th:text="*{username}"></span></li></h2>
+  <h2><li>Email: <span th:text="*{email}"></span></li></h2>
+
+
+
+  <h2><li>Фото профиля: <br>
+      <img th:src="'data:image/jpg;base64,' + ${profileImage}" alt="АВАТАРРР" width="200" height="200"></li></h2>
+
+
+</ul>
+
+
+
+
+
+
+<h2>Загрузить/Изменить аватар</h2>
+
+<form action="pasa" method="post" enctype="multipart/form-data">
+  <input type="file" name="image" accept="image/*" required/>
+  <input type="hidden" name="username" th:value="${user.username}"/>
+  <button type="submit">Upload</button>
+</form>
+
+
+
+
+<div>
+  <div><a href="/lk">Загрузка файлов на сервер</a></div>
+  <div><a href="/news">Новости</a></div>
+  <div><a href="/admin">Админ панель</a></div>
+  <div><a href="/">Домой</a></div>
+  <div><a href="/logout">Выход</a></div>
+
+</div>
+
+
+
+<a href="LKabinet.html" th:href="@{'/LKabinet/'+${user.username}}" />reterter</a>
+<a th:href="@{/LKabinet/${#authentication.name}}">Личный кабинет</a>
+
+
+
+
+</body>
+</html>
