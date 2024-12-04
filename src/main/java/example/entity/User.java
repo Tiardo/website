@@ -42,7 +42,7 @@ public class User implements UserDetails {
         } else {
             return null;
         }}
-    //Отправка изображения
+    //Вывод изображения
     public String generateBase64Image() {
         return Base64.getEncoder().encodeToString(profileImage);
     }
@@ -54,6 +54,8 @@ public class User implements UserDetails {
     private Set<Role> roles;
 
     public User() {
+        String imagePath = "img/icon.png";
+        this.profileImage = imagePath.getBytes();
     }
 
     public Long getId() {

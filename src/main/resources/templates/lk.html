@@ -20,15 +20,15 @@
         <form method="post" enctype="multipart/form-data" modelAttribute="userForm">
             <input type="file" name="file">
             <input type="submit" value="Отправить"></p>
-            ${usernameError}
-            ${passwordError}
+            <p th:if="${usernameError}" th:text="${usernameError}"></p>
+            <p th:if="${passwordError}" th:text="${passwordError}"></p>
         </form>
     </div>
 
 
 
     <div>
-        <a href="/LKabinet">Домой</a>
+        <a href="/redirect">Домой</a>
     </div>
 
 

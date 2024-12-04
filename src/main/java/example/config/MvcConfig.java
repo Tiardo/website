@@ -22,6 +22,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
             registry.addViewController("/registration").setViewName("registration");
             registry.addViewController("/admin").setViewName("admin");
             registry.addViewController("/index").setViewName("index");
+            registry.addViewController("/videoStream").setViewName("videoStream");
+            registry.addViewController("/redirect").setViewName("redirect");
 
         }
     }

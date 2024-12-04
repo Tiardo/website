@@ -30,11 +30,6 @@ import java.io.IOException;
     }
 
 
-
-
-
-
-
     @PostMapping("/LKabinet/{username}")
     public String uploadImage(@RequestParam("image") MultipartFile image, @RequestParam("username") String username) {
         User user = userRepository.findByUsername(username);
@@ -47,10 +42,6 @@ import java.io.IOException;
         return "redirect:/LKabinet/" + username;
 
     }
-
-
-
-
 
 
 }

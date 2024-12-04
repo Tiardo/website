@@ -40,6 +40,9 @@ public class WebSecurityConfig {
                         .requestMatchers("/LKabinet").hasRole("ADMIN")
                         .requestMatchers("/LKabinet/**").hasRole("USER")
                         .requestMatchers("/**").hasRole("USER")
+                        .requestMatchers("/redirect","/redirect/**").hasRole("USER")
+                        .requestMatchers("/videoStream").hasRole("USER")
+                        .requestMatchers("/videoStream/**").hasRole("USER")
                         .requestMatchers("/", "/resources/**").permitAll()
                         .anyRequest().authenticated()
                 )
@@ -49,6 +52,9 @@ public class WebSecurityConfig {
                         //.defaultSuccessUrl("/")
                         .permitAll()
                 )
+
+
+
                 .logout(logout -> logout
                         .logoutSuccessUrl("/")
                         .deleteCookies("JSESSIONID")
