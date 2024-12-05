@@ -17,7 +17,8 @@
     <tr>
       <th>ID</th>
       <th>UserName</th>
-      <th>Password</th>
+<!--      <th>Password</th>-->
+      <th>email</th>
       <th>Roles</th>
       <th>Actions</th>
     </tr>
@@ -26,7 +27,8 @@
     <tr th:each="user : ${allUsers}">
       <td th:text="${user.id}"></td>
       <td th:text="${user.username}"></td>
-      <td th:text="${user.password}"></td>
+<!--      <td th:text="${user.password}"></td>-->
+      <td th:text="${user.email}"></td>
       <td>
         <span th:each="role : ${user.roles}" th:text="${role.name} + '; '"></span>
       </td>

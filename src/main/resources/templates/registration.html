@@ -23,6 +23,12 @@
             <input type="password" th:field="*{passwordConfirm}" placeholder="Confirm your password"/>
             <div th:if="${passwordError}" th:text="${passwordError}" style="color:red;"></div>
         </div>
+
+        <div>
+            <input type="email" th:field="*{email}" placeholder="email"/>
+            <div th:if="${emailError}" th:text="${emailError}" style="color:red;"></div>
+        </div>
+
         <button type="submit">Зарегистрироваться</button>
     </form>
     <a href="/" th:href="@{/}">Главная</a>

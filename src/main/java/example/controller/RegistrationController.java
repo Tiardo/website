@@ -38,6 +38,10 @@ public class RegistrationController {
             model.addAttribute("usernameError", "Пользователь с таким именем уже существует");
             return "registration";
         }
+//        if (!userService.saveUser(userForm)){
+//            model.addAttribute("emailError", "Пользователь с таким email уже существует");
+//            return "registration";
+//        }
 
         return "redirect:/";
     }
