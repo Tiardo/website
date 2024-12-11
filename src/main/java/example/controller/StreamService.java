@@ -26,13 +26,13 @@ public class StreamService {
                 ffmpegPath,
                 "-i",
                 rtspUrl,
-                "-c:v", "libx264", // Выбор кодека H.264 для видео
+                "-c:v", "libx264",
                 "-b:v", "500k",
                 "-preset", "fast",
-                "-c:a", "aac", // Кодирование аудио в AAC
-                "-b:a", "32", // Установка битрейта для аудио
+                "-c:a", "aac",
+                "-b:a", "32",
                 "-f", "mp4",
-               "C:/website/src/main/resources/static/videos/index.mp4"
+               "/static/videos/index.mp4"
 
         );
 
