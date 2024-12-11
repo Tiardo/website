@@ -18,13 +18,15 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
             registry.addViewController("/news").setViewName("news");
             registry.addViewController("/lk").setViewName("lk");
             registry.addViewController("/LKabinet").setViewName("LKabinet");
-            registry.addViewController("/video").setViewName("video");
+            registry.addViewController("/static").setViewName("static");
             registry.addViewController("/registration").setViewName("registration");
             registry.addViewController("/admin").setViewName("admin");
             registry.addViewController("/index").setViewName("index");
             registry.addViewController("/videoStream").setViewName("videoStream");
             registry.addViewController("/redirect").setViewName("redirect");
-
+            registry.addViewController("/videos").setViewName("videos");
+            registry.addViewController("/video").setViewName("video");
+            registry.addViewController("/videoList").setViewName("videoList");
         }
     }
 
